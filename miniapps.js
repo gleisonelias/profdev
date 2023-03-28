@@ -52,4 +52,16 @@ function toggleFullScreen() {
 
 
 
-// 
+// GET CSS
+
+ function getCSS(el) {
+    el = el.get(0);
+    var styles = window.getComputedStyle(el);
+    var cssText = styles.cssText;
+    if (!cssText) {
+      cssText = Array.from(styles).reduce((str, property) => {
+        return `${str}${property}:${styles.getPropertyValue(property)};`;
+      }, '');
+    }
+    return cssText;
+  };
