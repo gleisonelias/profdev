@@ -45,9 +45,7 @@ $(document).ready(function () {
   });
   
    $(document).on('mouseup touchcancel touchend', '[emarrasto]', function (e_d) {
-       console.log('Fim');
-       console.log('Indrag? :'+arr_indrag);
-       console.log('Elemento detectado? :'+$('[arrastarPara]').get(0).tagName+'.'+$('[arrastarPara]').attr('class'));
+      
     if (arr_indrag == true) {
       if ( $('[arrastarPara]').is('[ondeixar]')) {
         var fnOn =  $('[arrastarPara]').attr('ondeixar').replaceAll('$(this)', 'e_dElement')
