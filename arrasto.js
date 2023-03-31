@@ -118,8 +118,9 @@ var eachDrops = [];
     $(this).attr('deixavel',eachDrops[eachDrops.length-1]);
     $(document).on('mouseup touchcancel touchend','[emarrasto]', function () {
       if (eachDrops.includes(e_dElement.attr('deixavel'))){
-      if (typeof callback === 'function') {
+      if (typeof callback === 'function' && Arrastado != undefined) {
         callback.call(e_dElement);
+        Arrastado = undefined;
       }
     }
     });
