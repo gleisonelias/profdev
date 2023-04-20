@@ -9,7 +9,7 @@ $(this).find("temp").load($(this).find("a.label-name").attr("href")+"?max-result
 $(this).find("article").each(function(){
 if($(this).is('article:first-of-type')){mainHtm+=('<div class="category"><h2>'+$(this).closest("li").find("a.label-name").text()+'</h2>');};
 intHtml = ('<div class="mmd"> <a href="{URL}" {MMD}>{NOME} <br/><div class="minipost">{TXT}</div></a></div>').replaceAll("{NOME}",$(this).find("h3.post-title.entry-title").text()).replaceAll("{URL}",$(this).find("h3.post-title.entry-title a").attr("href"));
-if($(this).find(".snippet-item").text().includes("#MMD Desc")){intHtml = intHtml.replace('{MMD}','old="{IDADE}" desc="{DESC}"').replaceAll("{DESC}", $(this).find(".snippet-item").text().split("#MMD Descrição:")[1].split("Idade:")[0]).replaceAll("{IDADE}",$(this).find(".snippet-item").text().split("Idade:")[1])}
+if($(this).find(".snippet-item").text().includes("#MMD Desc")){intHtml = intHtml.replace('{MMD}','old="{IDADE}" desc="{DESC}"').replaceAll("{DESC}", $(this).find(".snippet-item").text().split("#MMD Descrição:")[1].split("// Idade:")[0]).replaceAll("{IDADE}",$(this).find(".snippet-item").text().split("Idade:")[1].split("//")[0])}
 else {intHtml = intHtml.replace('{MMD}','').replace('{TXT}',$(this).find("div.post-body.entry-content").html())}
 mainHtm+=intHtml; 
 if($(this).is('article:last-of-type')){mainHtm+="</div>";};
