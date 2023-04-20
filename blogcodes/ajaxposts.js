@@ -25,7 +25,7 @@ $(document).ajaxComplete(function(){
     mainHtm = '<div id="main"><div class="category"><h2>Procurando por: '+$("span.search-label,span.search-query").text()+'</h2>'
 $("div#Blog1 article").each(function(){
 intHtml = ('<div class="mmd"> <a href="{URL}" {MMD}>{NOME} <br/><div class="minipost">{TXT}</div></a></div>').replaceAll("{NOME}",$(this).find("h3.post-title.entry-title").text()).replaceAll("{URL}",$(this).find("h3.post-title.entry-title a").attr("href"));
-if($(this).find(".snippet-item").text().includes("#MMD Desc")){intHtml = intHtml.replace('{MMD}','old="{IDADE}" desc="{DESC}"').replaceAll("{DESC}", $(this).find(".snippet-item").text().split("#MMD Descrição:")[1].split("Idade:")[0]).replaceAll("{IDADE}",$(this).find(".snippet-item").text().split("Idade:")[1])}
+if($(this).find(".snippet-item").text().includes("#MMD Desc")){intHtml = intHtml.replace('{MMD}','old="{IDADE}" desc="{DESC}"').replaceAll("{DESC}", $(this).find(".snippet-item").text().split("#MMD Descrição:")[1].split("// Idade:")[0]).replaceAll("{IDADE}",$(this).find(".snippet-item").text().split("Idade:")[1].split("//")[0])}
 else {intHtml = intHtml.replace('{MMD}','').replace('{TXT}',$(this).find("div.post-body.entry-content").html())}
 mainHtm+=intHtml; 
 });
