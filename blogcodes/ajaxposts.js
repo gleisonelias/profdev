@@ -40,7 +40,7 @@ if($(window).width() < $(window).height()){ screenRatio = 'width="'+(175*(($(win
 
     $('.mmd [href][old]').each(function(){$(this).find("div.minipost").replaceWith('<img '+screenRatio+' class="screen" src="https://2s9e3bif52.execute-api.eu-central-1.amazonaws.com/production/screenshot?url='+$(this).attr('href')+'"/>');});
 
-    $('[old]').not('[disabled]').each(function(){$(this).after('<age><ic style=" background-position: '+(parseInt($(this).attr('old'))*7)+'%; "></ic><et>'+$(this).attr('old')+'</et><desc>'+$(this).attr('desc')+'</desc></age>')});
+    $('[old]').each(function(){$(this).after('<age><ic style=" background-position: '+(parseInt($(this).attr('old'))*7)+'%; "></ic><et>'+$(this).attr('old')+'</et><desc>'+$(this).attr('desc')+'</desc></age>')});
 $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
