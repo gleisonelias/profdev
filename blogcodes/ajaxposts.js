@@ -49,7 +49,7 @@ $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
 $('body').fadeOut('fast').fadeIn("slow",function(){
-$(".loadingMode").remove();
+$(".loadingMode,desc").remove();
 
 })
 
