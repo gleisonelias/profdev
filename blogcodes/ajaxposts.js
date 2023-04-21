@@ -48,7 +48,8 @@ if($(window).width() < $(window).height()){ screenRatio = 'width="'+(175*(($(win
 $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
-$(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")})
+$(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")});
+$("#main:has(.category .mmd)").prepend("<button onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideDown('fast');$('.category,.mmd').has('age').slideUp('fast');$('#bodyMain').fadeIn();\">Postagens</button><button  onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#bodyMain').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\">MMD</button><button  onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideDown('fast');$('#bodyMain').fadeIn();\">Tudo</button>");
 $('body').fadeOut('fast').fadeIn("slow",function(){
 $(".loadingMode,desc").remove();
 })
