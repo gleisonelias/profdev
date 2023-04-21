@@ -32,7 +32,10 @@ mainHtm+=intHtml;
 mainHtm+="</div></div>";
  $('#bodyMain').html(mainHtm);
  endLoading();
-    }else{$('#bodyMain').html($(".post-body.entry-content").html());endLoading();};
+    }else{
+        if($("desc:contains(#MMD)").length>0){$("bodyMain").html($("article").html())}
+        else{$('#bodyMain').html($(".post-body.entry-content").html())};
+        endLoading()};
 });
 function endLoading(){
 if($(window).width() < $(window).height()){ screenRatio = 'width="'+(175*(($(window).width()*0.9)/$(window).height()))+'" height="175"'}
