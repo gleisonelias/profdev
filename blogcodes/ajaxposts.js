@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+$('html').css('opacity',1);
 if(location.pathname == "/"){
     mainHtm="<div id='main'>";
 catLeng = $("#Label1 ul li").length;
@@ -33,7 +34,7 @@ mainHtm+="</div></div>";
  $('#bodyMain').html(mainHtm);
  endLoading();
     }else{
-        if($("desc:contains(#MMD)").length>0){$("bodyMain").html($("article").html())}
+        if($("desc:contains(#MMD)").length==0){$("bodyMain").html($("article").html())}
         else{$('#bodyMain').html($(".post-body.entry-content").html())};
         endLoading()};
 });
