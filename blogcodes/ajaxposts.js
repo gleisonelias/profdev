@@ -48,6 +48,7 @@ if($(window).width() < $(window).height()){ screenRatio = 'width="'+(175*(($(win
 $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
+$(".category").each(function(){$(this).find("div.mmd").wrapAll("div")})
 $('body').fadeOut('fast').fadeIn("slow",function(){
 $(".loadingMode,desc").remove();
 
@@ -56,4 +57,7 @@ $(".loadingMode,desc").remove();
 }
 $(document).on("click", ".category h2", function(){
        $(".category").not($(this).parent()).addClass("wrapped");
-      $(this).parent(".category").toggleClass("wrapped")});
+      $(this).parent(".category").toggleClass("wrapped");
+        $(".wrapped h2+div").slideUp("slow");
+    $(".category:not(.wrapped) h2+div").slideDown("slow");
+});
