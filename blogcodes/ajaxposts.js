@@ -48,10 +48,9 @@ if($(window).width() < $(window).height()){ screenRatio = 'width="'+(175*(($(win
 $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
-$(".category").each(function(){$(this).find("div.mmd").wrapAll("div")})
+$(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")})
 $('body').fadeOut('fast').fadeIn("slow",function(){
 $(".loadingMode,desc").remove();
-
 })
 
 }
