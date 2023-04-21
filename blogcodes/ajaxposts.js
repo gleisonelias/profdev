@@ -49,12 +49,18 @@ $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
 $(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")});
-$("#main:has(.category .mmd age)").before("<center style=\"margin-top: -12px;\"><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category,.mmd').has('age').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\">MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\">Tudo</button></center>");
+$("#main:has(.category .mmd age)").before("<center style=\"margin-top: -12px;\"><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category,.mmd').has('age').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\"><span style='opacity:0.5;transition:.1s'>🎲</span> MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\">Tudo</button></center>");
 $('body').fadeOut('fast').fadeIn("slow",function(){
+if(window.localStorage["home"]!=undefined){$("#bodyMain > center > button.tab").eq(window.localStorage["home"]).click()};
 $(".loadingMode,desc").remove();
 })
 
 }
+$(document).on("click", "#bodyMain > center > button.tab", function(){
+$("#bodyMain > center > button.tab").removeClass("act");
+$(this).addClass("act");
+window.localStorage["home"]=$(this).index();
+});
 $(document).on("click", ".category h2", function(){
        $(".category").not($(this).parent()).addClass("wrapped");
       $(this).parent(".category").toggleClass("wrapped");
