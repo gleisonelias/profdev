@@ -59,7 +59,7 @@ $(".loadingMode,desc").remove();
 $(document).on("click", "#bodyMain > center > button.tab", function(){
 $("#bodyMain > center > button.tab").removeClass("act");
 $(this).addClass("act");
-window.localStorage["home"]=$(this).index();
+window.localStorage["home"]=$(this).index()-1;
 });
 $(document).on("click", ".category h2", function(){
        $(".category").not($(this).parent()).addClass("wrapped");
