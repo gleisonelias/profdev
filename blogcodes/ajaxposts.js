@@ -49,7 +49,7 @@ $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
 $(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")});
-$("#main:has(.category .mmd age)").prepend("<button class=\"tab\" onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideDown('fast');$('.category,.mmd').has('age').slideUp('fast');$('#bodyMain').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#bodyMain').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\">MMD</button><button  class=\"tab\"  onclick=\"$('#bodyMain').fadeOut();$('.category,.mmd').slideDown('fast');$('#bodyMain').fadeIn();\">Tudo</button>");
+$("#main:has(.category .mmd age)").before("<center style=\"margin-top: -12px;\"><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category,.mmd').has('age').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\">MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\">Tudo</button></center>");
 $('body').fadeOut('fast').fadeIn("slow",function(){
 $(".loadingMode,desc").remove();
 })
