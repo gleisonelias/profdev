@@ -72,7 +72,7 @@ $("h3+#creplies").append($("#comment-holder ol").first());
 })
 
 }
-$(document).on("click", "#bodyMain > center > button.tab", function(){
+$(document).on("click", "#posheader button.tab", function(){
 $("#bodyMain > center > button.tab").removeClass("act");
 $(this).addClass("act");
 window.localStorage["home"]=$(this).index()-1;
