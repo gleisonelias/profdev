@@ -51,7 +51,7 @@ $(this).replaceWith($(this).html())});
 $(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")});
 $("body:has(.category .mmd age) #posheader").append("<center><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category:not(:has(.mmd:not(:has(age)))),.mmd:has(age)').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\"><span style='opacity:0.3;transition:.1s'>🎲</span> MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\">Tudo</button></center>");
 $('body').fadeOut('fast').fadeIn("slow",function(){
-setTimeout(function(){if(window.localStorage["home"]!=undefined){$("#bodyMain > center > button.tab").eq(window.localStorage["home"]).click()};},750);
+setTimeout(function(){if(window.localStorage["home"]!=undefined){$("#posheader center > button.tab").eq(window.localStorage["home"]).click()};},750);
 $(".loadingMode,desc:not(.mmd *)").remove();
 
 //POSTAGEM DE RESPOSTAS
