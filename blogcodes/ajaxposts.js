@@ -49,7 +49,7 @@ $(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});$(".minipost *").not("img").each(function(){
 $(this).replaceWith($(this).html())});
 $(".category").each(function(){$(this).find("div.mmd").wrapAll("<div>")});
-$("body:has(.category .mmd age) #posheader").append("<center><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category:not(:has(.mmd:not(:has(age)))),.mmd:has(age)').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\"><span style='opacity:0.3;transition:.1s'>🎲</span> MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\">Tudo</button><p style=\"display:none\">Apenas conteúdo com materiais manipulativos (interativos) e jogos pedagógicos são exibidos nesse filtro.</p></center>");
+$("body:has(.category .mmd age) #posheader").append("<center><img src=\"https://icons.veryicon.com/png/o/miscellaneous/mall-icon-set/filter-44.png\" style=\"width: 20px; vertical-align: middle; margin: 10px;\" height=\"20px\" \><button datap=\"Filtrando por conteúdo de textos, documentos, vídeos...\" class=\"tab\" onclick=\"$('#main').fadeOut();$('.category,.mmd').slideDown('fast');$('.category:not(:has(.mmd:not(:has(age)))),.mmd:has(age)').slideUp('fast');$('#main').fadeIn();\">Postagens</button><button  class=\"tab\"  onclick=\"$('#main').fadeOut();$('.category,.mmd').slideUp('fast');$('.category,.mmd').has('age').slideDown('slow');$('#main').fadeIn();\" title=\"Materiais Manipulativos Digitais e Jogos\" datap=\"Apenas conteúdo com materiais manipulativos (interativos) e jogos pedagógicos são exibidos nesse filtro.\"><span style='opacity:0.3;transition:.1s'>🎲</span> MMD</button><button  class=\"tab\"  onclick=\"$('.category,.mmd').slideDown('fast');\" datap=\"Todo conteúdo do blog está aqui.\">Todos</button><p style=\"display:none\"></p></center>");
 $('body').fadeOut('fast').fadeIn("slow",function(){
 setTimeout(function(){if(window.localStorage["home"]!=undefined){$("#posheader center > button.tab").eq(window.localStorage["home"]).click()};},750);
 $(".loadingMode,desc:not(.mmd *)").remove();
@@ -75,6 +75,7 @@ $("h3+#creplies").append($("#comment-holder ol").first());
 $(document).on("click", "#posheader button.tab", function(){
 $("button.tab").removeClass("act");
 $(this).addClass("act");
+$(this).parent('center').find('> p').text($(this).attr('datap');
 window.localStorage["home"]=$(this).index()-1;
 });
 $(document).on("click", ".category h2", function(){
