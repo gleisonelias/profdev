@@ -75,7 +75,7 @@ $("h3+#creplies").append($("#comment-holder ol").first());
 $(document).on("click", "#posheader button.tab", function(){
 $("button.tab").removeClass("act");
 $(this).addClass("act");
-$(this).parent('center').find('> p').text($(this).attr('datap');
+$(this).parent('center').find('> p').text($(this).attr('datap'));
 window.localStorage["home"]=$(this).index()-1;
 });
 $(document).on("click", ".category h2", function(){
