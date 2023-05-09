@@ -73,7 +73,7 @@ $("h3+#creplies").append($("#comment-holder ol").first());
 
 }
 $(document).on("click", "#posheader button.tab", function(){
-$("#bodyMain > center > button.tab").removeClass("act");
+$("button.tab").removeClass("act");
 $(this).addClass("act");
 window.localStorage["home"]=$(this).index()-1;
 });
