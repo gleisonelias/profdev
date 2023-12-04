@@ -42,14 +42,12 @@ if (document.body.scrollHeight > window.innerHeight) {
 },1500);
  // Removendo os event listeners após a execução para evitar múltiplas execuções
   window.removeEventListener("click", executeOnInteraction);
-  window.removeEventListener("touchstart", executeOnInteraction);
 },1500);
 }
 
 // Adicionando event listeners para click e touchstart
 setTimeout(function(){
 window.addEventListener("click", executeOnInteraction);
-window.addEventListener("touchstart", executeOnInteraction);
 },1500)
 </script>
     </body>
