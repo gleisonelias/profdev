@@ -12,5 +12,43 @@
     </head>
     <body style="background-color: black">
         <script type="text/javascript" src="js/main.js"></script>
+        <script>
+function executeOnInteraction() {
+setTimeout(function(){
+// Definindo o elemento gameCanvas
+const gameCanvas = document.getElementById("gameCanvas");
+
+// Redimensionando o gameCanvas com uma escala de 0.95
+gameCanvas.style.transform = "scale(0.95)";
+
+// Solicitando entrar em modo de tela cheia
+document.documentElement.requestFullscreen();
+
+setTimeout(function(){
+// Definindo a largura e altura do gameCanvas baseado no tamanho da janela
+gameCanvas.style.width = window.innerWidth + "px";
+gameCanvas.style.height = (window.innerWidth * 0.764705882) + "px";
+
+// Verificando se a janela possui barra de rolagem horizontal
+if (document.body.scrollHeight > window.innerHeight) {
+  // Reduzindo a altura do gameCanvas até que a barra de rolagem desapareça
+  let reduction = 0;
+  while (document.body.scrollHeight > window.innerHeight) {
+    reduction += 10;
+    gameCanvas.style.height = (window.innerWidth * 0.764705882 - reduction) + "px";
+  }
+}
+
+},1500);
+ // Removendo os event listeners após a execução para evitar múltiplas execuções
+  window.removeEventListener("click", executeOnInteraction);
+},1500);
+}
+
+// Adicionando event listeners para click e touchstart
+setTimeout(function(){
+window.addEventListener("click", executeOnInteraction);
+},1500)
+</script>
     </body>
 </html>
