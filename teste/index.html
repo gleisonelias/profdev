@@ -14,6 +14,7 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script>
 function executeOnInteraction() {
+setTimeout(function(){
 // Definindo o elemento gameCanvas
 const gameCanvas = document.getElementById("gameCanvas");
 
@@ -42,11 +43,14 @@ if (document.body.scrollHeight > window.innerHeight) {
  // Removendo os event listeners após a execução para evitar múltiplas execuções
   window.removeEventListener("click", executeOnInteraction);
   window.removeEventListener("touchstart", executeOnInteraction);
+},1500);
 }
 
 // Adicionando event listeners para click e touchstart
+setTimeout(function(){
 window.addEventListener("click", executeOnInteraction);
 window.addEventListener("touchstart", executeOnInteraction);
+},1500)
 </script>
     </body>
 </html>
